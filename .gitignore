@@ -4,3 +4,4 @@ terraform.tfvars
 mykey*
 .terraform/
 .terraform/**
+.terraform*
