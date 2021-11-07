@@ -1,0 +1,5 @@
+.vscode/
+*/terraform.tfvars
+terraform.tfvars
+mykey*
+.terraform/
