@@ -22,5 +22,5 @@ The overrall purpose for this demo is to demonstrate how we can output provision
 
 In this demo, we performed the following:
 1. In `instance.tf`:
-   1. `provisioner "local-exec` - This allows us to run commands on the LOCAL machine but access attributes from the instance. As you see in the example, we're going to write out the **private ip** into a file for the instance that gets spun up. The file gets created on the LOCAL machine.
+   1. `provisioner "local-exec"` - This allows us to run commands on the LOCAL machine but access attributes from the instance. As you see in the example, we're going to write out the **private ip** into a file for the instance that gets spun up. The file gets created on the LOCAL machine.
    2. `output "ip"` - This allows us to directly display to the console specific attributes from the created instance.
