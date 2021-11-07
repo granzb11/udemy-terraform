@@ -2,4 +2,4 @@
 */terraform.tfvars
 terraform.tfvars
 mykey*
-.terraform/
+.terraform/*/*
