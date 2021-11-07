@@ -24,3 +24,20 @@ In this demo, we performed the following:
 1. In `instance.tf`:
    1. `provisioner "local-exec"` - This allows us to run commands on the LOCAL machine but access attributes from the instance. As you see in the example, we're going to write out the **private ip** into a file for the instance that gets spun up. The file gets created on the LOCAL machine.
    2. `output "ip"` - This allows us to directly display to the console specific attributes from the created instance.
+
+## Demo 4 - Remote State
+The overrall purpose for this demo is to demonstrate how to store the state of our infrastructure remotely on AWS. Terraform keeps the **remote state** of the infratructure.  Typically terraform creates a few files locally to store it's state:
+ * `terraform.tfstate` - This stores the current remote state
+ * `terraform.tfstate.backup` - This store the previous remote state
+
+When we execute `terraform apply`, a new terraform.tfstate and backup is written. This is how terraform keeps track of the remote state. These files can be stored in `git`. It gives us a history of our terraform.state file.
+
+The `terraform state` can be saved remotely, using the `backend` functionality in terraform. The default is `local backend` aka the local files that are discussed above. Other backends include: [s3 (with locking), consul (with locking), terraform enterprise (commercial solution)]
+
+Terraform backend benefinits:
+  * Working in team: it allows for collaboration, the remote state will always be available for the whole team. Keep in mind if `locking` is enabled, this means that only one person can alter the terraform state. This is good and bad because no conflicts, but only 1 person can push changes.
+  * The state file is not stored locally. Possible sensitive information is now only sotred in the remote state
+
+There are 2 steps to configure remote state:
+  * Add the backend code to a `.tf` file
+  * Run the initialization process
