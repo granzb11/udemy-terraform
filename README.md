@@ -90,3 +90,23 @@ In this demo, we performed the following:
     ```
 * You can pass arguments to a module
 * You can use the output from the module in the main part of your code
+
+# Terraform Command Overview
+| Command     | Description |
+| ----------- | ----------- |
+| apply       | Applies State |
+| destroy     | Destroys all terraform managed state (use with caustion) |
+| fmt         | Formats terraform files to a canonical format and style  |
+| get         | Download  and update modules |
+| graph       | Create a visual representation of a configuration or execution plan |
+| import [options] ADDRESS ID   | Import will try and find the infrastructure resource identified with ID and import the state into terraform.tfstate with resource id ADDRESS |
+| output [options] [NAME] | Output  any of your resources. Using NAME will only output a specific resource |
+| plan | Terraform plan, show the changes to be made to the infrastructure |
+| push | Push changes  to Atlas, Hashicorp's Enterprise tool that can automatically run terraform from a centralized server |
+| refresh | Refresh the remote state. Can identify differences between state file and remote state |
+| remote | Configure remote state storage |
+| show | Show human readable output from a state or a plan |
+| state | Use this command for advanced state management. I.E Rename a resource with terra state mv aws_instance.example -> aws_instance.production |
+| taint | Manually mark a resource as tainted, meaning it will be destroyed and recreated at the next apply |
+| validate | Validate your tertraform syntax |
+| untain | Undo a taint |
