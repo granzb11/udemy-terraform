@@ -98,7 +98,7 @@ In this demo, we performed the following:
 | destroy     | Destroys all terraform managed state (use with caustion) |
 | fmt         | Formats terraform files to a canonical format and style  |
 | get         | Download  and update modules |
-| graph       | Create a visual representation of a configuration or execution plan |
+| graph       | Create a visual representation of a configuration or execution plan. Good to view dependencies between resources for current infrastructure |
 | import [options] ADDRESS ID   | Import will try and find the infrastructure resource identified with ID and import the state into terraform.tfstate with resource id ADDRESS |
 | output [options] [NAME] | Output  any of your resources. Using NAME will only output a specific resource |
 | plan | Terraform plan, show the changes to be made to the infrastructure |
